@@ -1,17 +1,14 @@
 from password_strength import PasswordPolicy, PasswordStats
 import string
 import random
+from password_config import policy
+from password_blacklist import INVALID_PASSWORDS
 
 
 def verificar_complexidade_pword(password):
-    # Definir a política de password segura
-    policy = PasswordPolicy.from_names(
-        length=12,  # Mínimo de 12 caracteres
-        uppercase=3,  # Pelo menos 3 letras maiúsculas
-        numbers=3,  # Pelo menos 3 números
-        special=3,  # Pelo menos 3 caracteres especiais
-    )
-
+    if password in INVALID_PASSWORDS:
+        print("A password inserida é muito comum ou fácil de adivinhar. Por favor, insira outra.")
+        return False, ""
     # Verificar se a password cumpre à política
     resultado = policy.test(password)
     if resultado:
@@ -45,5 +42,9 @@ def verificar_complexidade_pword(password):
 
 
 password_recebida = input("Digite a password: ")
-valida, mensagem_user = verificar_complexidade_pword(password_recebida)
+valida = False
+while not valida:
+    valida, mensagem_user = verificar_complexidade_pword(password_recebida)
+    if not valida:
+        password_recebida = input("Digite outra password: ")
 print(mensagem_user)

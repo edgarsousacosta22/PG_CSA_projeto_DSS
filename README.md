@@ -1,7 +1,6 @@
 #Verificação de Complexidade de Passwords
 
-Linha de Comandos? Ou interface gráfico?
-
+https://docs.servicenow.com/pt-BR/bundle/tokyo-platform-security/page/integrate/authentication/concept/password-complexity-requirements.html
 
 
 
