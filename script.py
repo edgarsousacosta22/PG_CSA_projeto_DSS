@@ -12,12 +12,12 @@ def verificar_complexidade_pword(password):
         special=3,  # Pelo menos 3 caracteres especiais
     )
 
-    # Verificar se a password atende à política
+    # Verificar se a password cumpre à política
     resultado = policy.test(password)
     if resultado:
-        # Calcular estatísticas da senha
+        # Calcular estatísticas da password
         stats = PasswordStats(password)
-        if stats.strength() > 0.5:  # Força da senha deve ser maior que 0.5
+        if stats.strength() > 0.5:  # Força da password deve ser maior que 0.5
             return True, "A password é forte."
         else:
             mensagem = "A password é fraca.\n"
