@@ -1,13 +1,7 @@
 # Lista de passwords inválidas/faceis comuns que são expostas em várias plataformas
-INVALID_PASSWORDS = [
-    "123456",
-    "qwerty",
-    "!@#$%^",
-    "aaaaa",
-    "senha123",
-    "password",
-    "123abc",
-    "abc123",
-    "password123",
-    # Lista em constante desenvolvimento - passwords inválidas
-]
+INVALID_PASSWORDS = []
+
+# Abrir e ler o arquivo .txt com as senhas inválidas
+with open('invalid_passwords.txt', 'r', encoding='utf-8') as file:
+    for line in file:
+        INVALID_PASSWORDS.append(line.strip())
