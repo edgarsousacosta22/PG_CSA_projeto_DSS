@@ -13,6 +13,11 @@ Versão:
 
 Descrição
 
+Usando três ficheiros:
+Blacklist.py
+Config.py
+Script.py
+
 O Script verifica se a password inserida em linha de comandos cumpre com os requisitos de Policy usando duas bibliotecas importadas.
 Os requisitos são definidos no script e podem ser alterados.
 
@@ -22,15 +27,10 @@ A função test(password) verifica se a password fornecida cumpre todas as regra
 
 A variável policy é uma instância da classe PasswordPolicy que foi definida com base em critérios específicos, como comprimento mínimo, número mínimo de letras maiúsculas, números e caracteres especiais. A função test(password) é então chamada com a password fornecida como argumento para verificar se ela atende a esses critérios.
 
-A linha stats = PasswordStats(password) cria uma instância da classe PasswordStats, que é usada para calcular estatísticas sobre a password fornecida.
-
 PasswordPolicy: Esta biblioteca é utilizado para definir uma política de password, especificando os critérios que uma password deve atender para ser considerada segura.
-
-PasswordStats: Este biblioteca é utilizado para calcular estatísticas sobre uma password, como comprimento, número de letras maiúsculas, minúsculas, dígitos e caracteres especiais.
 
 Além disso, também importei as bibliotecas `string` e `random`, que serão utilizados para gerar sugestões de password(não pedido).
 
-
-
+PowerPoint incluido para ver a informação.
 
 Edgar Costa a22312163
