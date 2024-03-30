@@ -10,7 +10,7 @@ def verificar_complexidade_pword(password):
 
     # Verificar se a password cumpre à política
     resultado = policy.test(password)
-    if resultado:
+    if not resultado:
         return True, "A password é forte."
     else:
         mensagem_user_visual = "A password é fraca. A password não atende aos critérios de complexidade: "
